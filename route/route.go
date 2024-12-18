@@ -14,6 +14,6 @@ func InitRoute() (r *gin.Engine, err error) {
 	})
 
 	//完成注册用户的路由
-	r.POST("/signup", controller.SignUpController)
+	r.POST("/signup", controller.SignUpContoller)
 	return
 }

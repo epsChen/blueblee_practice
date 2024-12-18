@@ -3,7 +3,6 @@ package models
 import (
 	"database/sql"
 	"errors"
-	"gorm.io/gorm"
 	"time"
 )
 
@@ -18,6 +17,9 @@ ID（自增）
 创建时间
 更新时间
 */
+var (
+	ErrUserExist = errors.New("用户已存在")
+)
 
 type User struct {
 	ID        uint `gorm:"primaryKey"`
@@ -30,14 +32,17 @@ type User struct {
 	UpdatedAt time.Time      //自动生成更新时间
 }
 
-// 定义创建用户前的钩子函数
-// 要求实现的功能有 用户名不能重复的校验
-func (u *User) BeforeCreate(db *gorm.DB) (err error) {
-	var count int64
-	db.Where("user_name =?", u.UserName).Count(&count)
-	if count > 0 {
-		err = errors.New("用户名已存在")
-		return
-	}
-	return
-}
+//// 定义创建用户前的钩子函数
+//// 要求实现的功能有 用户名不能重复的校验
+//func (u *User) BeforeCreate(db *gorm.DB) (err error) {
+//	var count int64
+//	result := db.Where("user_name =?", u.UserName).Count(&count)
+//	if result.Error != nil {
+//		return result.Error
+//	}
+//
+//	if count > 0 {
+//		return ErrUserExist
+//	}
+//	return
+//}

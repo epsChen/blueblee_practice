@@ -6,6 +6,7 @@ import (
 	"encoding/hex"
 	"github.com/epsChen/bluebell/models"
 	"github.com/epsChen/bluebell/utils"
+	"github.com/go-sql-driver/mysql"
 )
 
 const secret = "secret"
@@ -24,7 +25,6 @@ const secret = "secret"
 //	return nil
 //}
 
-// 使用一个钩子函数实现了对用户名的校验功能
 // 当用户名一致时会直接返回错误
 func InsertUser(p *models.ParamSignUp) (err error) {
 	//2.为用户生成一个id
@@ -39,7 +39,14 @@ func InsertUser(p *models.ParamSignUp) (err error) {
 	}
 	result := db.Create(&user)
 	if result.Error != nil {
+		//对错误进行判断 如果是mysql错误 并且错误码为1062（唯一性约束）
+		//返回用户已存在
+		if sqlError, ok := result.Error.(*mysql.MySQLError); ok && sqlError.Number == 1062 {
+			err = models.ErrUserExist
+			return
+		}
 		err = result.Error
+		return
 	}
 	return
 }
