@@ -1,0 +1,25 @@
+2024-12-14T19:42:39.307+0800	INFO	logger/logger.go:60	init logger success
+2024-12-14T19:42:41.845+0800	INFO	logger/logger.go:60	init logger success
+2024-12-14T19:54:47.279+0800	INFO	logger/logger.go:60	init logger success
+2024-12-16T10:19:02.821+0800	INFO	logger/logger.go:60	init logger success
+2024-12-16T10:21:13.070+0800	ERROR	logic/user.go:21	user exist	{"error": "用户已存在"}
+2024-12-16T10:21:13.070+0800	ERROR	controller/user.go:24	logic.SignUp failed	{"error": "用户已存在"}
+2024-12-16T10:25:01.612+0800	INFO	logger/logger.go:60	init logger success
+2024-12-16T10:25:05.226+0800	ERROR	logic/user.go:21	user exist	{"error": "用户已存在"}
+2024-12-16T10:25:05.226+0800	ERROR	controller/user.go:24	logic.SignUp failed	{"error": "用户已存在"}
+2024-12-16T10:25:39.307+0800	INFO	logger/logger.go:60	init logger success
+2024-12-16T10:25:44.108+0800	ERROR	logic/user.go:21	user exist	{"error": "用户已存在"}
+2024-12-16T10:25:44.108+0800	ERROR	controller/user.go:24	logic.SignUp failed	{"error": "用户已存在"}
+2024-12-16T10:30:22.343+0800	INFO	logger/logger.go:60	init logger success
+2024-12-16T10:36:47.459+0800	INFO	logger/logger.go:60	init logger success
+2024-12-16T10:36:52.707+0800	ERROR	controller/user.go:21	invalid params	{"error": "Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'eqfield' tag"}
+2024-12-16T10:37:13.731+0800	ERROR	controller/user.go:21	invalid params	{"error": "Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'eqfield' tag"}
+2024-12-16T10:38:39.131+0800	ERROR	controller/user.go:21	invalid params	{"error": "invalid character '}' looking for beginning of object key string"}
+2024-12-16T10:39:14.344+0800	ERROR	controller/user.go:21	invalid params	{"error": "invalid character '}' looking for beginning of object key string"}
+2024-12-16T10:52:39.009+0800	INFO	logger/logger.go:60	init logger success
+2024-12-18T19:47:50.454+0800	INFO	logger/logger.go:60	init logger success
+2024-12-18T19:49:06.086+0800	ERROR	controller/user.go:21	invalid params	{"error": "Key: 'ParamSignUp.RePassword' Error:Field validation for 'RePassword' failed on the 'required' tag"}
+2024-12-18T20:07:32.533+0800	INFO	logger/logger.go:60	init logger success
+2024-12-18T20:09:25.269+0800	INFO	logger/logger.go:60	init logger success
+2024-12-18T20:09:28.974+0800	ERROR	logic/user.go:30	mysql.InsertUser failed	{"error": "Error 1062 (23000): Duplicate entry 'user1' for key 'users.uni_users_user_name'"}
+2024-12-18T20:09:28.974+0800	ERROR	controller/user.go:25	logic.SignUp failed	{"error": "Error 1062 (23000): Duplicate entry 'user1' for key 'users.uni_users_user_name'"}

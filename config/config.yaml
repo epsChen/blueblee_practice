@@ -1,0 +1,28 @@
+#项目属性
+name: "bluebell"
+mode: "dev"
+port: 8080
+version: "v0.0.1"
+start_time: "2020-07-01"
+machine_id: 1
+
+
+mysql:
+  port: 3306
+  user: "root"
+  password: "20040301"
+  dbname: "bluebell_practice"
+#  max_open_conns: 200
+#  max_idle_conns: 50
+
+redis:
+  port: 6379
+  db: 0
+  pool_size: 100
+
+log:
+  filename: "bluebell_log.log"
+  lever: "debug"
+  max_size: 200
+  max_age: 30
+  max_backups: 7
